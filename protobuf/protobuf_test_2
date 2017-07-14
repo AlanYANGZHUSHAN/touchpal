@@ -1,0 +1,9 @@
+import people_pb2
+p_s=people_pb2.peoples()
+p_1=p_s.people.add()
+p_1.name='p_1'
+p_1.height=176
+p_1.gender=people_pb2.people.Male
+print(p_1)
+print(p_s)
+

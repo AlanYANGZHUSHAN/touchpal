@@ -1,0 +1,24 @@
+message people
+{
+    optional string name = 1;
+    optional int32 height = 2;
+    enum gentype
+    {
+        Male=0;
+        Female=1;
+    }
+    enum gen
+    {
+        mm=0;
+    }
+    required gentype gender=3[default=Male];
+}
+message peoples
+{
+    repeated people people=1;
+}
+
+
+
+
+

@@ -1,0 +1,92 @@
+1.编写*.proto文件
+
+
+
+message people
+{
+    optional string name =1;
+    optional int32 height =2;
+    required string gender =3;
+}
+message peoples
+{
+    repeated people people =1;
+}
+peoples的add()可实现批量定义peoples
+
+
+
+2.转化*_pb2.py文件(命令行)
+
+
+protoc --python_out=./(转化的位置) ./*.proto
+
+
+
+3.调用*_pb2.py
+
+import *_pb2.py
+构建person case
+p_1=*_pb2.people()
+p_1.name='p_1'
+p_1.height=176
+p_1.gender='M'
+二进制序列化(显示字符)
+p_1_str=p_1.SeriaLizeToString()(str 格式)
+再转回来
+p_2=*_pb2.people()
+p_2.ParseFromString(p_1_str)
+
+
+
+4.构建多个people case
+
+
+
+p_s=*_pb2.peoples()
+p_1=p_s.people.add()(repeated格式，add方法)
+p_1.name='p_1'
+p_1.height=176
+p_1.gender='M'
+p_2=p_s.people.add()(repeated格式，add方法)
+p_2.name='p_2'
+p_2.height=176
+p_2.gender='M'
+p_s_str=p_s.SeriaLizeToString()(str 格式)
+
+5.写入本地文件
+f=open("data_proto",'w')
+f.write(p_s_str)
+f.close()
+
+6从本地载入
+f=open("data_proto",'r')
+p_s_str=f.read()
+f.close()
+p_s=*_pb2.persons()
+p_s.ParseFromString(p_s_str)
+
+
+
+7备注
+还有enum枚举类型
+message people
+{
+    enum PhoneType
+    {
+        MOBILE = 0;
+        HOME = 1;
+        WORK = 2;
+    }
+
+    message PhoneNumber
+    {
+        required string number = 1;
+        optional PhoneType type = 2 [default = HOME];
+    }
+    repeated PhoneNumber phone = 1
+}
+
+
+调用
+----.phone=*_pb2.people.HOME

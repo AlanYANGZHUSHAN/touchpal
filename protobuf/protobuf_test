@@ -1,0 +1,50 @@
+#!/usr/bin/python
+# -*-coding:utf-8 -*-
+import people_pb2
+p_1=people_pb2.people()
+p_1.name="alan"
+p_1.height=176
+p_1.gender='M'
+print p_1,p_1.name
+p_1_str=p_1.SerializeToString()
+print p_1_str
+print type(p_1_str)
+print len(p_1_str)
+for i in p_1_str:
+    print i
+p_2=people_pb2.people()
+p_2.ParseFromString(p_1_str)
+p_2_str=p_2.SerializeToString()
+print(p_2)
+f=open("data_proto",'w')
+f.write(p_1_str)
+f.close()
+print("import data")
+f=open("data_proto",'r')
+f_1=f.read()
+print(f_1)
+f.close()
+print("one case")
+print("start more cases")
+p_s=people_pb2.peoples()
+p_1=p_s.people.add()
+p_1.name="p_1"
+p_1.height=176
+p_1.gender='M'
+p_2=p_s.people.add()
+p_2.name="p_2"
+p_2.height=175
+p_2.gender="FM"
+print(p_s.SerializeToString())
+for i in p_s.people:
+    print(i.SerializeToString())
+f=open("data_proto",'w')
+f.write(p_s.SerializeToString())
+f.close()
+f=open("data_proto",'r')
+p_s_str=f.read()
+f.close()
+print(p_s_str)
+p_s=people_pb2.peoples()
+p_s.ParseFromString(p_s_str)
+print(p_s)
