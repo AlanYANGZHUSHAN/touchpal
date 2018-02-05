@@ -11726,9 +11726,7 @@ body {
 div#notebook {
   overflow: visible;
   border-top: none;
-}
-
-@media print {
+}@media print {
   div.cell {
     display: block;
     page-break-inside: avoid;
@@ -11749,7 +11747,7 @@ div#notebook {
 
 <!-- Loading mathjax macro -->
 <!-- Load mathjax -->
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
     <!-- MathJax configuration -->
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -11773,17 +11771,15 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="git-guide"><center>git guide</center><a class="anchor-link" href="#git-guide">&#182;</a></h2>
+<h1 id="git-guide"><center>git guide</center><a class="anchor-link" href="#git-guide">&#182;</a></h1>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11792,8 +11788,34 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="git-bash&#29615;&#22659;">git bash&#29615;&#22659;<a class="anchor-link" href="#git-bash&#29615;&#22659;">&#182;</a></h2>
+<pre><code>与Linux存在类似的环境
+vim 环境、ps -ef、grep、ssh等</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="git-&#26412;&#22320;&#27880;&#20876;&#21644;&#29983;&#25104;key">git &#26412;&#22320;&#27880;&#20876;&#21644;&#29983;&#25104;key<a class="anchor-link" href="#git-&#26412;&#22320;&#27880;&#20876;&#21644;&#29983;&#25104;key">&#182;</a></h2>
+<pre><code>注册邮箱 git config --global user.email "yangzhushan2011@126.com"
+注册名字 git config --global user.name "Alan Yang"
+查看注册 git config --global --list
+生成密钥 ssh -keygen -t -rsa -C"yangzhushan2011@126.com"
+         -C表示注释 -r表示创建的密钥类型"rsa1"(SSH-1) "rsa"(SSH-2) "dsa"(SSH-2)
+         产生id_rsa(密钥,重要）id_rsa.pub(公钥)
+         id_rsa密钥上传至服务器或者github等工具上</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11804,21 +11826,20 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="&#28155;&#21152;&#12289;&#19978;&#20256;&#20462;&#25913;&#36807;&#30340;&#25991;&#20214;">&#28155;&#21152;&#12289;&#19978;&#20256;&#20462;&#25913;&#36807;&#30340;&#25991;&#20214;<a class="anchor-link" href="#&#28155;&#21152;&#12289;&#19978;&#20256;&#20462;&#25913;&#36807;&#30340;&#25991;&#20214;">&#182;</a></h2>
 <pre><code>git add filename1 filename2
 git commit -m 'some information'
-(将工作区的文件上传至暂存区)</code></pre>
+(将工作区的文件上传至暂存区)
+git add . 上传文件夹下所有文件</code></pre>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11829,8 +11850,7 @@ git commit -m 'some information'
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11842,8 +11862,7 @@ git commit -m 'some information'
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11858,8 +11877,7 @@ git reset --hard commit_id(可以回退到未来版本)
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11871,8 +11889,7 @@ git reset --hard commit_id(可以回退到未来版本)
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11891,8 +11908,7 @@ git reset --hard commit_id(可以回退到未来版本)
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11905,18 +11921,19 @@ git push origin master</code></pre>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#35299;&#20915;&#20914;&#31361;">&#35299;&#20915;&#20914;&#31361;<a class="anchor-link" href="#&#35299;&#20915;&#20914;&#31361;">&#182;</a></h2>
+<pre><code>git stash 将工作区放入缓存
+git pull 拉代码
+git stash pop 删除工作区缓存 进行merge
+git stash list
+git stash clear</code></pre>
 
 </div>
 </div>
-</div>
-
 </div>
     </div>
   </div>
